@@ -3,8 +3,120 @@
   <head>
     <title>Färjanverse</title>
     <meta charset="utf-8" />
+    <style>
+      :root {
+        --blue: #707cff;
+        --light-blue: #70c4ff;
+        --yellow: #fff370;
+        --green: #7cff70;
+        --red: #ff717c;
+      }
+
+      body {
+        background: var(--light-blue);
+      }
+
+      #sun {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+
+        width: 15vw;
+        height: 15vw;
+
+        background-color: var(--yellow);
+        border-radius: 100%;
+      }
+
+      #land {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+
+        height: 27vh;
+
+        background-color: var(--green);
+      }
+
+      #sea {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+
+        height: 20vh;
+
+        background-color: var(--blue);
+      }
+
+      #boat {
+        position: absolute;
+        left: 15vw;
+        bottom: 12vh;
+        z-index: 5;
+
+        width: 50vh;
+        height: 20vh;
+
+        background-color: var(--red);
+
+        border-radius: 0 0 15vh 5vh;
+
+        animation-name: rock;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+
+      @keyframes rock {
+        0% {
+          rotate: 10deg;
+        }
+        50% {
+          rotate: -10deg;
+        }
+        100% {
+          rotate: 10deg;
+        }
+      }
+
+      #deck {
+        position: absolute;
+        left: 5vh;
+        bottom: 20vh;
+
+        width: 35vh;
+        height: 10vh;
+
+        background-color: white;
+
+        border-radius: 0 3vh 0 0;
+      }
+
+      #pipe {
+        position: absolute;
+        left: 7vh;
+        bottom: 10vh;
+
+        width: 10vh;
+        height: 8vh;
+
+        background-color: black;
+        border-radius: 0 3vh 0 0;
+      }
+    </style>
   </head>
   <body>
-    <h1>HELLO FELLOW FÄRJAN LOVER!</h1>
+    <div id="sun"></div>
+    <div id="land"></div>
+    <div id="boat">
+      <div id="deck">
+        <div id="pipe"></div>
+      </div>
+    </div>
+    <div id="sea"></div>
   </body>
 </html>
