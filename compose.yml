@@ -13,3 +13,10 @@ services:
       - "traefik.http.routers.http-server.rule=Host(`farjanverse.party`)"
       - "traefik.http.routers.http-server.tls=true"
       - "traefik.http.routers.http-server.tls.certresolver=default"
+    networks:
+      - frontend
+
+networks:
+  frontend:
+    name: frontend
+    external: true
