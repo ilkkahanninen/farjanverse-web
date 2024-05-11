@@ -1,0 +1,15 @@
+services:
+  http-server:
+    image: ghcr.io/patrickdappollonio/docker-http-server:v2.1.4
+    command: --title Färjanverse --gzip --hide-links
+    restart: always
+    volumes:
+      - ./html:/html
+    ports:
+      - 8003:5000
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.http-server.entrypoints=websecure"
+      - "traefik.http.routers.http-server.rule=Host(`farjanverse.party`)"
+      - "traefik.http.routers.http-server.tls=true"
+      - "traefik.http.routers.http-server.tls.certresolver=default"
